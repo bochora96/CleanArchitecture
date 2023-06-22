@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Teimuraz Botchorishvili",
+  "classifications": ["Web", "MVC"],
+  "identity": "CleanArchitecture",
+  "name": "My custom template",
+  "description": "This is my special description",
+  "shortName": "cleanarchitecture",
+  "sourceName": "CleanArchitecture",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "preferNameDirectory": true
+}
