@@ -3,7 +3,7 @@
   "author": "Teimuraz Botchorishvili",
   "classifications": ["Web", "MVC"],
   "identity": "CleanArchitecture",
-  "name": "My custom template",
+  "name": "Clean Architecture Template",
   "description": "This is my special description",
   "shortName": "cleanarchitecture",
   "sourceName": "CleanArchitecture",
