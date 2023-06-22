@@ -9,9 +9,5 @@
     <ItemGroup>
         <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.2" />
     </ItemGroup>
-    
-    <ItemGroup>
-      <ProjectReference Include="..\Core\Shared.Domain\Shared.Domain.csproj" />
-    </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-namespace Shared.Domain;
+﻿namespace Shared.Domain;
 
 public class AuditableEntity<T> where T : struct, IEquatable<T>, IFormattable
 {
