@@ -4,6 +4,7 @@ using Shared.Domain;
 
 namespace CleanArchitecture.Persistence.Repositories;
 
+// TODO Think about generic dbContext
 public class BaseRepository<TKey, T> : IAsyncRepository<TKey, T>
     where TKey : struct, IEquatable<TKey>, IFormattable
     where T : AuditableEntity<TKey>

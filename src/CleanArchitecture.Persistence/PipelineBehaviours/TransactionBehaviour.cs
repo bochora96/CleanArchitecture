@@ -23,7 +23,7 @@ public class TransactionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequ
         try
         {
             var transaction = await _context.BeginTransactionAsync(cancellationToken);
-                
+
             var response = await next();
         
             await _context.CommitTransactionAsync(transaction, cancellationToken);
