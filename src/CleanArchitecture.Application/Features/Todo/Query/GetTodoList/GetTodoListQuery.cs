@@ -2,7 +2,4 @@
 
 namespace CleanArchitecture.Application.Features.Todo.Query.GetTodoList;
 
-public class GetTodoListQuery : IRequest<List<TodoListVm>>
-{
-    
-}
+public record GetTodoListQuery : IRequest<List<TodoListVm>>;

@@ -1,5 +1,7 @@
 ﻿using CleanArchitecture.Application.Contracts.Persistence;
+using CleanArchitecture.Persistence.PipelineBehaviours;
 using CleanArchitecture.Persistence.Repositories;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +21,7 @@ public static class PersistenceServiceRegistration
         );
 
         services.AddScoped(typeof(IAsyncRepository<,>), typeof(BaseRepository<,>));
+        services.AddScoped(typeof(IPipelineBehavior<,>), typeof(TransactionBehaviour<,>));
         services.AddScoped<ITodoRepository, TodoRepository>();
 
         return services;

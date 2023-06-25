@@ -1,9 +1,10 @@
 ﻿using MediatR;
 using Shared.Application.Contracts.Persistence;
+using Shared.Application.Mediator;
 
 namespace CleanArchitecture.Application.Features.Todo.Command.DeleteTodo;
 
-public class DeleteTodoCommandHandler : IRequestHandler<DeleteTodoCommand, Unit>
+public class DeleteTodoCommandHandler : ICommandHandler<DeleteTodoCommand, Unit>
 {
     private readonly IAsyncRepository<Guid, Domain.Entities.Todo> _todoRepository;
 

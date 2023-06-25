@@ -1,17 +1,16 @@
-﻿using CleanArchitecture.Application.Contracts.Persistence;
-using CleanArchitecture.Domain.Entities;
+﻿using CleanArchitecture.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Shared.Domain;
 
 namespace CleanArchitecture.Persistence;
 
-public class TodoDbContext : DbContext
+public class TodoDbContext : DbContextHelper
 {
     public TodoDbContext(DbContextOptions<TodoDbContext> options)
         : base(options)
     {
     }
-
+    
     public DbSet<Todo> Todos { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

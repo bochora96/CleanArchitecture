@@ -1,8 +1,5 @@
-﻿using MediatR;
+﻿using Shared.Application.Mediator;
 
 namespace CleanArchitecture.Application.Features.Todo.Query.GetTodoDetails;
 
-public class GetTodoDetailsQuery : IRequest<TodoDetailsVm>
-{
-    public Guid Id { get; set; }
-}
+public record GetTodoDetailsQuery(Guid Id) : IQuery<TodoDetailsVm>;

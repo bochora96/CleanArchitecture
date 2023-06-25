@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using MediatR;
 using Shared.Application.Contracts.Persistence;
+using Shared.Application.Mediator;
 
 namespace CleanArchitecture.Application.Features.Todo.Query.GetTodoDetails;
 
-public class GetTodoDetailsQueryHandler : IRequestHandler<GetTodoDetailsQuery, TodoDetailsVm>
+public class GetTodoDetailsQueryHandler : IQueryHandler<GetTodoDetailsQuery, TodoDetailsVm>
 {
     private readonly IMapper _mapper;
     private readonly IAsyncRepository<Guid, Domain.Entities.Todo> _todoRepository;
