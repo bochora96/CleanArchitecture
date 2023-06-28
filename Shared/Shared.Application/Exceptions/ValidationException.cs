@@ -6,13 +6,13 @@ public class ValidationException : Exception
 {
     public List<string> ValidationErrors { get; set; }
     
-    public ValidationException(ValidationResult validationResult)
+    public ValidationException(IEnumerable<ValidationResult> validationResults)
     {
-        ValidationErrors = new List<string>();
-
-        foreach (var validationError in validationResult.Errors)
-        {
-            ValidationErrors.Add(validationError.ErrorMessage);
-        }
+        ValidationErrors = 
+            validationResults
+                .SelectMany(validationResult => validationResult.Errors)
+                .Where(validationFailure => validationFailure is not null)
+                .Select(validationFailure => validationFailure.ErrorMessage)
+                .ToList();
     }
 }
