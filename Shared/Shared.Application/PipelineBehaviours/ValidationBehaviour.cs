@@ -21,13 +21,15 @@ public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TReque
     {
         var context = new ValidationContext<TRequest>(request);
 
-        var validationResults = _validators
+        var errors = _validators
             .Select(x => x.Validate(context))
+            .SelectMany(x => x.Errors)
+            .Where(x => x is not null)
             .ToList();
         
-        if (validationResults.Any())
+        if (errors.Any())
         {
-            throw new Exceptions.ValidationException(validationResults);
+            throw new Exceptions.ValidationException(errors);
         }
 
         return await next();
