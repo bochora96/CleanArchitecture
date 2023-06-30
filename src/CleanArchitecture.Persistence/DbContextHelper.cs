@@ -36,7 +36,7 @@ public class DbContextHelper : DbContext
             await SaveChangesAsync(cancellationToken);
             await transaction.CommitAsync(cancellationToken);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             await RollbackTransaction(cancellationToken);
             throw;

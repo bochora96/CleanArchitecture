@@ -30,7 +30,7 @@ public class TransactionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequ
         
             return response;
         }
-        catch (Exception _)
+        catch (Exception)
         {
             await _context.RollbackTransaction(cancellationToken);
             // ex.Data.Add("PreviousStackTrace", ex.StackTrace);
